@@ -24,3 +24,18 @@ def list(songs)
     puts "#{index + 1}. #{song}"
   end
 end
+
+def play(songs)
+  puts "/Please enter a song name or number:"
+  input = gets.strip
+  if input.to_i.between?(1, songs.length)
+      puts "#{songs[input.to_i - 1]}"
+  end
+  if !songs.include? input || !input.to_i.between?(1, songs.length)
+    puts "Invalid input, please try again"
+  elsif songs.include? input
+    puts input
+  end
+end
+
+def
