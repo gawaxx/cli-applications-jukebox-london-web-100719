@@ -27,14 +27,13 @@ end
 
 def play(songs)
   puts "/Please enter a song name or number:"
-  input = gets.strip
-  if input.to_i.between?(1, songs.length)
-      puts "#{songs[input.to_i - 1]}"
-  end
-  if !songs.include? input || !input.to_i.between?(1, songs.length)
+  choice = gets.strip
+  if choice.to_i.between?(1, songs.length)
+      puts "#{songs[choice.to_i - 1]}"
+  elsif songs.include? choice
+    puts choice
+  else
     puts "Invalid input, please try again"
-  elsif songs.include? input
-    puts input
   end
 end
 
